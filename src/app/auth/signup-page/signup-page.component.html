@@ -1,0 +1,143 @@
+<div class="container">
+
+    <div class="mt-2">
+        <a class="navbar-brand fw-bold fs-4" [routerLink]="'/'">{{appBrandName}}</a>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-10 col-xl-9 mx-auto">
+            <div class="card flex-row my-3 border-0 shadow rounded-3 overflow-hidden">
+                <div class="card-img-left d-none d-md-flex w-50">
+                    <img class="img-fluid rounded-3 my-5"
+                        src="https://images.pexels.com/photos/8553916/pexels-photo-8553916.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                        alt="..." />
+                </div>
+                <div class="card-body p-4 p-sm-5">
+                    <h5 class="card-title text-center mb-3 fw-light fs-5">Register</h5>
+
+                    <div *ngIf="responseMessage && responseMessage.length > 0" class="alert"
+                        [ngClass]="hasError? 'alert-danger': 'alert-primary' " role="alert">
+                        {{responseMessage}}
+                    </div>
+                    Choose:
+                    <form [formGroup]="registrationForm" (ngSubmit)="onRegisterSubmit()">
+                        <div class="form-floating mb-3">
+                            <select name="student-teacher" id="student-teacher">
+                                <option value="student" selected>Student</option>
+                                <option value="teacher">Teacher</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-floating mb-3">
+                            <input type="username" id="floatingFullName" class="form-control" placeholder="Username"
+                                formControlName="fullName"
+                                [ngClass]="{ 'is-invalid': isSubmitted && formControls.fullName.errors }" required
+                                autofocus />
+                            <label for="floatingFullName"><span class="text-danger">*</span> Full Name </label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="floatingInputEmail"
+                                placeholder="name@example.com" formControlName="email"
+                                [ngClass]="{ 'is-invalid': isSubmitted && formControls.email.errors }" required />
+                            <label for="floatingInputEmail"><span class="text-danger">*</span> Email address</label>
+                        </div>
+
+                        <hr>
+
+                        <div class="form-floating mb-3">
+                            <input type="phone" class="form-control" id="floatingPhone" placeholder="Phone"
+                                formControlName="Phone"
+                                [ngClass]="{ 'is-invalid': isSubmitted && formControls.phone.errors }" required />
+                            <label for="floatingPassword"><span class="text-danger">*</span> Phone</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="address" class="form-control" id="floatingAddress" placeholder="Address"
+                                formControlName="Address"
+                                [ngClass]="{ 'is-invalid': isSubmitted && formControls.address.errors }" required />
+                            <label for="floatingAddress"><span class="text-danger">*</span> Address</label>
+                        </div>
+
+
+
+                        <!-- for Student use Description -->
+                        <div class="form-floating mb-3">
+                            <input type="description" class="form-control" id="floatingDescription"
+                                placeholder="Description" formControlName="description"
+                                [ngClass]="{ 'is-invalid': isSubmitted && formControls.description.errors }" required />
+                            <label for="floatingDescription"><span class="text-danger">*</span> Description</label>
+                        </div>
+
+                        <!-- for Tutor use Expertise Short info-->
+                        <div class="form-floating mb-3">
+                            <input type="expertise" class="form-control" id="floatingExpertise" placeholder="Expertise"
+                                formControlName="expertise"
+                                [ngClass]="{ 'is-invalid': isSubmitted && formControls.expertise.errors }" required />
+                            <label for="floatingExpertise"><span class="text-danger">*</span> Expertise</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="shortInfo" class="form-control" id="floatingPassword" placeholder="ShortInfo"
+                                formControlName="shortInfo"
+                                [ngClass]="{ 'is-invalid': isSubmitted && formControls.shortInfo.errors }" required />
+                            <label for="floatingShortInfo"><span class="text-danger">*</span> Short Info</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password"
+                                formControlName="password"
+                                [ngClass]="{ 'is-invalid': isSubmitted && formControls.password.errors }" required />
+                            <label for="floatingPassword"><span class="text-danger">*</span> Password</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="password" class="form-control" id="floatingPasswordConfirm"
+                                placeholder="Confirm Password" formControlName="passwordConfirm"
+                                [ngClass]="{ 'is-invalid': isSubmitted && formControls.passwordConfirm.errors }"
+                                required>
+                            <label for="floatingPasswordConfirm"><span class="text-danger">*</span> Confirm
+                                Password</label>
+
+                            <span class="text-danger" *ngIf="formControls.passwordConfirm.errors?.confirmedValidator">
+                                Password must match </span>
+                        </div>
+
+                        <div class="col-12 mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" [ngClass]="isTermsChecked ? 'is-valid' : 'is-invalid'"
+                                    type="checkbox" [(ngModel)]="isTermsChecked" [ngModelOptions]="{standalone: true}"
+                                    [checked]="isTermsChecked" id="validCheck3" aria-describedby="validCheck3Feedback"
+                                    required>
+                                <label class="form-check-label" for="validCheck3">
+                                    Agree to terms and conditions <a href="" (click)="false">terms and conditions</a>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="d-grid mb-2">
+
+                            <button class="btn btn btn-primary fw-bold text-uppercase" type="submit"
+                                [disabled]="!isTermsChecked || loading">
+                                Register
+                                <app-loading *ngIf="loading" [repeat]="3"></app-loading>
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                    <a class="d-block text-center mt-2" [routerLink]="'/login'">Have an account? Log In</a>
+
+                    <hr class="my-4">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="text-center text-muted mb-3">
+    Copyright &copy; 2022 &mdash;
+    <a class="link" [routerLink]="'/'">{{appBrandName}}</a>
+</div>

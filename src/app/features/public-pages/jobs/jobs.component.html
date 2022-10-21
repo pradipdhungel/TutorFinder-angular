@@ -1,0 +1,27 @@
+<div>
+    <h1 class="display-5 fw-bolder mb-2 text-center">A Place to Quicky Find a Tutors You want !!! Matching Students and Tutors across the World</h1>
+    <p class="lead fw-normal-50 mb-4 text-center">In order to assist students develop confidence and realize their full potential, we support tutors who offer high-quality, targeted instruction.
+        Tutors offer top-notch instruction in all topics at all levels all around the world.</p>
+    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+
+        <app-job-search class="w-100"></app-job-search>
+
+    </div>
+</div>
+
+
+<div class="container mt-5">
+
+    <div class="row">
+                info
+        <div class="col-md-4" *ngFor="let job of jobs">
+            <div class="card card-body">
+                <h5 class="card-title">{{job.title}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{job.jobId}}</h6>
+                <p class="card-text">{{job.description}}</p>
+                <a href="#" class="card-link">View</a>
+            </div>
+        </div>
+
+    </div>
+</div>
