@@ -3,4 +3,5 @@ export interface tutoRequirementDTO {
     title: string;
     description: string;
     studentUserId: number;
+    postedDate: string;
 }

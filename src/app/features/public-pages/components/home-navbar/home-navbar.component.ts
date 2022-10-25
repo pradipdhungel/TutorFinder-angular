@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '@app/auth/services/authentication.service';
-import { appBrandName } from '@app/core/core.constant';
+import { appBrandName, USER_ROLES } from '@app/core/core.constant';
 import { CredentialsService } from '@app/auth/services/credentials.service';
 
 @Component({
@@ -15,6 +15,7 @@ export class HomeNavbarComponent implements OnInit {
   isNavCollapse: boolean = true;
   isLoggedIn: boolean = false;
   firstName: string | undefined; // TODO replace with firstname, fullname or substring email..
+  isStudent: boolean = false
 
   constructor(private credentialsService: CredentialsService, private authenticationService: AuthenticationService) { }
 
@@ -23,6 +24,12 @@ export class HomeNavbarComponent implements OnInit {
   }
 
   private initializeLoggedInDetails() {
+
+    console.log("this.credentialsService.getCredentials() ==>> ", this.credentialsService.getCredentials()?.jwtTokenPayload?.roles);
+    var userRole: string = this.credentialsService.getUserRole();
+    this.isStudent = userRole == USER_ROLES.ROLE_STUDENT;
+    console.log("this.isStudent => " , this.isStudent);
+    
     this.isLoggedIn = this.credentialsService.isAuthenticated();
     if (this.isLoggedIn) {
       const credentials = this.credentialsService.getCredentials();

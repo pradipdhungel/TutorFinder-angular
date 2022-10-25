@@ -45,4 +45,11 @@ export class CredentialsService {
       localStorage.removeItem(STORAGE_CREDENTIALS_KEY);
     }
   }
+
+  getUserRole(): string {
+    var roles: any = this.getCredentials()?.jwtTokenPayload?.roles;
+    var obj = JSON.parse(roles)
+    console.log(obj[0]);
+    return obj[0]
+  }
 }

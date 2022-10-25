@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute, convertToParamMap, ParamMap, Params } from '@angular/router';
 import { QueryParamKey } from '@app/core/core.constant';
-import { JobDTO } from '@app/core/core.model';
+import { JobDTO, RequirementDTO } from '@app/core/core.model';
 import { SearchServiceService } from '@app/core/services/search-service.service';
+import * as moment from 'moment';
 import { filter, Subject, takeUntil } from 'rxjs';
 
 @Component({
@@ -18,7 +19,7 @@ export class TutorRequirementsComponent implements OnInit {
   routeQueryParams: Params = {};
   paramMap!: ParamMap;
 
-  jobs: JobDTO[] = [];
+  requirements: RequirementDTO[] = [];
 
   constructor(private route: ActivatedRoute, private formBuilder: FormBuilder, private searchService: SearchServiceService) { }
 
@@ -45,8 +46,12 @@ export class TutorRequirementsComponent implements OnInit {
   }
 
   public searchRequest(query: string): void {
-    this.searchService.getAllJobs(query).subscribe(response => {
-      this.jobs = response;
+    // this.searchService.getAllJobs(query).subscribe(response => {
+    //   this.jobs = response;
+    // });
+
+    this.searchService.getAllTutorRequirement(query).subscribe(response => {
+      this.requirements = response; 
     });
   }
 
