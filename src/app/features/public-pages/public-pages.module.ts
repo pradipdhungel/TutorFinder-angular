@@ -11,7 +11,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { TutorRequirementsComponent } from './jobs/jobs.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TutorRequirementComponent } from './Tutor-Requirement-Page/tutor-requirement/tutor-requirement.component';
-
+import { SharedModule } from '@app/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -30,6 +30,7 @@ import { TutorRequirementComponent } from './Tutor-Requirement-Page/tutor-requir
     PublicPagesRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    SharedModule,
     BsDropdownModule.forRoot()
   ]
 })

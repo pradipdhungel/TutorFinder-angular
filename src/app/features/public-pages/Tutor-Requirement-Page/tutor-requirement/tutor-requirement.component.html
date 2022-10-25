@@ -32,18 +32,14 @@
                       <br/>
                       <br/>
                       <br/> 
-
                       <div class="d-grid mb-2">
-
-                          <button class="btn btn btn-primary fw-bold text-uppercase" type="submit"
-                              [disabled]="!isTermsChecked || loading">
-                              Apply                              
+                          <button class="btn btn btn-primary fw-bold text-uppercase" type="submit" >
+                              Apply  
+                              <app-loading *ngIf="loading" [repeat]="3"></app-loading>                            
                           </button>
                       </div>
-                  </form>                                  
-
+                  </form>                                
                   <hr class="my-4">
-
               </div>
           </div>
       </div>
