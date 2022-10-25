@@ -8,3 +8,11 @@ export interface JobDTO {
     title: string;
     description: string;
 }
+
+export interface RequirementDTO {
+    id: string;
+    title: string;
+    description: string;
+    studentUserId: number
+    postedDate: string
+}

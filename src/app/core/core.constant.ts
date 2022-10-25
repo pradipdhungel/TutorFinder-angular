@@ -9,7 +9,9 @@ export const APP_ROUTES = {
   REGISTER: '/register',
 
   CONTACT: '/contact',
-  JOBS: '/jobs',
+  // JOBS: '/jobs',
+  JOBS: '/app-jobs',
+  TUTOR_REQUIREMENT: '/tutor-requirement',
 
   DASHBOARD: '/dashboard',
 };
@@ -54,3 +56,8 @@ export const ERROR_CODES_CONSTANTS = {
   ResourceNotFound: 404,
   InternalServerError: 500,
 };
+
+export const USER_ROLES = {
+  ROLE_STUDENT: "ROLE_STUDENT",
+  ROLE_TUTOR: "ROLE_TUTOR"
+}

@@ -17,10 +17,11 @@ export class JobSearchComponent implements OnInit {
   }
 
   onSearchSubmit() {
-    const jobsBrowseQueryParams = {
+    const requirementBrowseQueryParams = {
       q: this.searchText
     };
-    this.router.navigate([APP_ROUTES.JOBS], { queryParams: jobsBrowseQueryParams, queryParamsHandling: 'merge' });
+    console.log("jobsBrowseQueryParams", requirementBrowseQueryParams)
+    this.router.navigate([APP_ROUTES.TUTOR_REQUIREMENT], { queryParams: requirementBrowseQueryParams, queryParamsHandling: 'merge' });
   }
 
 }

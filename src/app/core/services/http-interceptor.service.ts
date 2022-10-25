@@ -16,8 +16,10 @@ export class HttpInterceptorService implements HttpInterceptor {
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         let apiRequest;
+        
         if (this.credentialService.isAuthenticated()) {
         const credentials = this.credentialService.getCredentials();
+        console.log("credentials?.token => ", credentials?.token);
             console.log('interceptor adding request token');
             apiRequest = req.clone({
                 setHeaders: {
