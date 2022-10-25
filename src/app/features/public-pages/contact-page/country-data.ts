@@ -1,18 +1,6 @@
-import { Component, OnInit } from '@angular/core';
 import { Countries } from 'src/app/core/model/country.model';
 
-@Component({
-  selector: 'app-contact-page',
-  templateUrl: './contact-page.component.html',
-  styleUrls: ['./contact-page.component.scss']
-})
-export class ContactPageComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-    countries: Countries [] = [
+export var countries: Countries [] = [
     { code: "AF", code3: "AFG", name: "Afghanistan", number: "004" },
     { code: "AL", code3: "ALB", name: "Albania", number: "008" },
     { code: "DZ", code3: "DZA", name: "Algeria", number: "012" },
@@ -263,4 +251,3 @@ export class ContactPageComponent implements OnInit {
     { code: "ZW", code3: "ZWE", name: "Zimbabwe", number: "716" },
     { code: "AX", code3: "ALA", name: "Åland Islands", number: "248" }
 ];
-}

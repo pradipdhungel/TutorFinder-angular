@@ -11,7 +11,6 @@ export const APP_ROUTES = {
   CONTACT: '/contact',
   JOBS: '/jobs',
 
-
   DASHBOARD: '/dashboard',
 };
 

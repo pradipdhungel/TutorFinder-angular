@@ -18,10 +18,21 @@ export class SignupPageComponent implements OnInit {
   hasError: boolean = false;
   responseMessage: string = '';
 
+//newly added
+  isNameSelected!:boolean;
+  selectInput(event:any) {
+    let selected = event.target.value;
+    if (selected == "ROLE_STUDENT") {
+      this.isNameSelected = true;
+    } else {
+      this.isNameSelected = false;
+    }
+  }
   // Form state
   registrationForm!: FormGroup;
   isTermsChecked: boolean = false;
   isSubmitted = false;
+  role = "ROLE_STUDENT";
 
   constructor(private formBuilder: FormBuilder,
     private authenticationService: AuthenticationService) {
@@ -29,34 +40,53 @@ export class SignupPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.initializeRegistrationForm();
+    
   }
-
+  
   initializeRegistrationForm(): void {
     this.registrationForm = this.formBuilder.group({
-      fullName: ['', [Validators.required]],
-      email: ['', [Validators.required]],
+      username: ['', [Validators.required]],
       password: ['', [Validators.required]],
-      passwordConfirm: ['', Validators.required]
+      passwordConfirm: ['', [Validators.required]],
+      // role: ['ROLE_STUDENT',],//ROLE_STUDENT
+      fullName: [''],
+      address: [''],     
+      phone: [''],      
+      description: [''],
+      shortInfo: [''],
+      expertise: ['']
+
     }, {
       validator: CoreUtil.ConfirmedValidator('password', 'passwordConfirm')
     });
   }
 
+  onChange(role: any) {
+    this.role = role.value;
+  }
 
   get formControls(): { [p: string]: AbstractControl } {
     return this.registrationForm.controls;
   }
-
+   
   onRegisterSubmit(): void {
+    
     this.isSubmitted = true;
+    
     if (this.registrationForm.invalid) {
       return;
-    }
+    }    
     const formValue = this.registrationForm.value;
     const registerContext: RegisterContext = {
-      fullName: formValue.fullName,
-      email: formValue.email,
-      password: formValue.password
+      username:formValue.username,
+      password: formValue.password,        
+      role: this.role,  
+      fullname: formValue.fullName,
+      address:formValue.address, 
+      phone:formValue.phone,
+      description:formValue.description,
+      shortInfo: formValue.shortInfo,
+      expertise: formValue.expertise,
     };
     this.loading = true;
     this.responseMessage = '';

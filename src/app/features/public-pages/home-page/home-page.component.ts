@@ -11,5 +11,10 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit(): void {
   }
+// searchText!:string;
 
+// onSearchTextEntered(seachValue:string){
+//   console.log(this.searchText);
+//   this.searchText=seachValue;
+// }
 }

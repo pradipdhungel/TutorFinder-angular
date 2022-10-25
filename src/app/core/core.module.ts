@@ -13,6 +13,7 @@ import { HttpInterceptorService } from './services/http-interceptor.service';
   imports: [
     CommonModule
   ],
+  //newly added
   providers: [AuthenticationGuard,
     {
       provide: HTTP_INTERCEPTORS,

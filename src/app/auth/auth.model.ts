@@ -2,9 +2,15 @@ import { UserDTO } from "@app/core/model/user.model";
 
 
 export interface RegisterContext {
-    fullName: string;
-    email: string;
+    username: string;
     password: string;
+    role : string;
+    fullname: string;
+    address: string;
+    phone: string;   
+    description: string;    
+    shortInfo: string;
+    expertise: string;    
 }
 
 export interface LoginContext {

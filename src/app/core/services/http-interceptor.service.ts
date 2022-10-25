@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
+import { HttpErrorResponse, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Router } from '@angular/router';
@@ -24,6 +24,7 @@ export class HttpInterceptorService implements HttpInterceptor {
                     Authorization: 'Bearer ' + credentials?.token
                 }
             });
+            //authReq = req.clone({ headers: req.headers.set(TOKEN_HEADER_KEY, 'Bearer ' + token) });
             console.log('api request ', apiRequest);
         } else {
             apiRequest = req.clone({});
@@ -49,3 +50,7 @@ export class HttpInterceptorService implements HttpInterceptor {
             );
     }
 }
+// //newly added
+export const authInterceptorProviders = [
+    { provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true }
+  ];
