@@ -5,12 +5,12 @@
         <div class="form-floating w-100 mx-3">
             <input type="text" class="form-control" id="floatingSearchText"
                 placeholder="What are you searching ?" [(ngModel)]="searchText"
-                [ngModelOptions]="{standalone: true}" required>
+               (input)="onSearchSubmit()" [ngModelOptions]="{standalone: true}"  required> 
+                 <!-- [ngModelOptions]="{standalone: true}" -->
             <label class="lead text-muted fw-normal-50" for="floatingSearchText">Search Tutor-Name or Expertise</label>
         </div>
-
         <div class="align-self-center">
-            <button type="submit" class="btn btn-lg btn-primary rounded-pill">Search</button>
+            <button type="submit" class="btn btn-lg btn-primary rounded-pill">Search</button>           
         </div>
     </div>
 </form>

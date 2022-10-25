@@ -9,6 +9,7 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { FeaturesModule } from './features/features.module';
 import { AppRoutingModule } from './app-routing.module';
+import { StudentServiceService } from './core/services/student-service.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { AppRoutingModule } from './app-routing.module';
     SharedModule,
     FeaturesModule
   ],
-  providers: [],
+  providers: [StudentServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

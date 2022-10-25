@@ -19,68 +19,57 @@
                         [ngClass]="hasError? 'alert-danger': 'alert-primary' " role="alert">
                         {{responseMessage}}
                     </div>
-                    Choose:
+                    Choose: Role
                     <form [formGroup]="registrationForm" (ngSubmit)="onRegisterSubmit()">
                         <div class="form-floating mb-3">
-                            <select name="student-teacher" id="student-teacher">
-                                <option value="student" selected>Student</option>
-                                <option value="teacher">Teacher</option>
+                            <select name="role" id="role" (change)="onChange($event.target)">
+                                <option value="ROLE_STUDENT" selected >Student</option>
+                                <option value="ROLE_TUTOR" >Tutor</option>
                             </select>
                         </div>
-
-
                         <div class="form-floating mb-3">
-                            <input type="username" id="floatingFullName" class="form-control" placeholder="Username"
+                            <input type="username" class="form-control" id="floatingInputEmail"
+                                placeholder="name@example.com" formControlName="username"
+                                [ngClass]="{ 'is-invalid': isSubmitted && formControls.username.errors }" required />
+                            <label for="floatingInputUsername"><span class="text-danger">*</span> Email Address</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="fullName" id="floatingFullName" class="form-control" placeholder="fullName"
                                 formControlName="fullName"
-                                [ngClass]="{ 'is-invalid': isSubmitted && formControls.fullName.errors }" required
                                 autofocus />
                             <label for="floatingFullName"><span class="text-danger">*</span> Full Name </label>
-                        </div>
-
-                        <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="floatingInputEmail"
-                                placeholder="name@example.com" formControlName="email"
-                                [ngClass]="{ 'is-invalid': isSubmitted && formControls.email.errors }" required />
-                            <label for="floatingInputEmail"><span class="text-danger">*</span> Email address</label>
-                        </div>
-
-                        <hr>
-
+                        </div>                                  
+                       
+                        
                         <div class="form-floating mb-3">
                             <input type="phone" class="form-control" id="floatingPhone" placeholder="Phone"
-                                formControlName="Phone"
-                                [ngClass]="{ 'is-invalid': isSubmitted && formControls.phone.errors }" required />
-                            <label for="floatingPassword"><span class="text-danger">*</span> Phone</label>
+                                formControlName="phone"/>
+                            <label for="floatingPhone"><span class="text-danger">*</span> Phone</label>
                         </div>
                         <div class="form-floating mb-3">
                             <input type="address" class="form-control" id="floatingAddress" placeholder="Address"
-                                formControlName="Address"
-                                [ngClass]="{ 'is-invalid': isSubmitted && formControls.address.errors }" required />
-                            <label for="floatingAddress"><span class="text-danger">*</span> Address</label>
+                                formControlName="address" />
+                            <label for="floatingAddress"><span class="text-danger"></span> Address</label>
                         </div>
 
-
-
                         <!-- for Student use Description -->
-                        <div class="form-floating mb-3">
+                        <div class="form-floating mb-3" *ngIf="role === 'ROLE_STUDENT'">
                             <input type="description" class="form-control" id="floatingDescription"
-                                placeholder="Description" formControlName="description"
-                                [ngClass]="{ 'is-invalid': isSubmitted && formControls.description.errors }" required />
-                            <label for="floatingDescription"><span class="text-danger">*</span> Description</label>
+                                placeholder="Description" formControlName="description"/>
+                            <label for="floatingDescription"><span class="text-danger"></span> Description</label>
                         </div>
 
                         <!-- for Tutor use Expertise Short info-->
-                        <div class="form-floating mb-3">
+                        <div class="form-floating mb-3" *ngIf="role === 'ROLE_TUTOR'">
                             <input type="expertise" class="form-control" id="floatingExpertise" placeholder="Expertise"
-                                formControlName="expertise"
-                                [ngClass]="{ 'is-invalid': isSubmitted && formControls.expertise.errors }" required />
+                                formControlName="expertise"/>
                             <label for="floatingExpertise"><span class="text-danger">*</span> Expertise</label>
                         </div>
 
-                        <div class="form-floating mb-3">
-                            <input type="shortInfo" class="form-control" id="floatingPassword" placeholder="ShortInfo"
-                                formControlName="shortInfo"
-                                [ngClass]="{ 'is-invalid': isSubmitted && formControls.shortInfo.errors }" required />
+                        <div class="form-floating mb-3" *ngIf="role === 'ROLE_TUTOR'">
+                            <!-- *ngIf="!isNameSelected" -->
+                            <input type="shortInfo" class="form-control" id="floatinghortInfo" placeholder="ShortInfo"
+                                formControlName="shortInfo"/>
                             <label for="floatingShortInfo"><span class="text-danger">*</span> Short Info</label>
                         </div>
 

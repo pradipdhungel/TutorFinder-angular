@@ -6,14 +6,17 @@ export const CURRENT_WINDOW_URL = window.location.protocol + '//' + window.locat
 
 
 const API_ENDPOINT = environment.apiUrl;
+const API_LOGIN=environment.loginApi;
 // API Endpoints
 export class ApiEndpoints {
 
     static readonly API_URL = API_ENDPOINT;
 
     static readonly AUTH = {
-        CUSTOM_USER_REGISTRATION: API_ENDPOINT + '/auth/register',
-        CUSTOM_USER_LOGIN: API_ENDPOINT + '/auth/login',
+        // CUSTOM_USER_REGISTRATION: API_ENDPOINT + '/auth/register',
+        CUSTOM_USER_REGISTRATION: API_ENDPOINT,
+        // CUSTOM_USER_LOGIN: API_ENDPOINT + '/auth/login',
+        CUSTOM_USER_LOGIN: API_LOGIN,
         LOGOUT: API_ENDPOINT + '/logout',
 
     };
