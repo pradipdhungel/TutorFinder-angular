@@ -28,16 +28,24 @@
                     <a href="javascript: void(0);"
                         class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
                         id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false" dropdownToggle>
-                        <span class="link-secondary text-muted pe-1">
-                            <strong *ngIf="firstName">{{firstName}}</strong>
-                            <strong *ngIf="!firstName" class="text-danger">invalid-user</strong>
-                        </span>
                         <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
                     </a>
 
                     <!-- Temporary fix for css "dropdown-menu-end" not working in ngBootstrap [ngStyle]="{'right': '0'}"  -->
                     <ul *dropdownMenu class="dropdown-menu text-small shadow dropdown-menu-end"
                         [ngStyle]="{'right': '0'}" aria-labelledby="dropdownUser2">
+<<<<<<< HEAD
+=======
+                        <li><a class="dropdown-item">
+                                <span class="link-secondary text-muted pe-1">
+                                    <strong *ngIf="firstName">{{firstName}}</strong>
+                                    <strong *ngIf="!firstName" class="text-danger">invalid-user</strong>
+                                </span>
+                            </a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+>>>>>>> cc7a8dc744b9b5bfa2ade340e581709ba87b7b19
                         <li><a class="dropdown-item" [routerLink]="'/dashboard'">Dashboard</a></li>
                         <li><a class="dropdown-item" [routerLink]="'/dashboard/settings'">Settings</a></li>
                         <li><a class="dropdown-item" [routerLink]="'/dashboard/profile'">Profile</a></li>

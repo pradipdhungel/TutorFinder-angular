@@ -5,9 +5,7 @@
 export const environment = {
   production: false,
   appBrandName: 'Tutor Finder',
-  // apiUrl: 'http://35.193.139.217',
-  apiUrl:'http://localhost:8080/users/register',
-  loginApi:'http://localhost:8080/users'
+  apiUrl: 'http://localhost:8080'
 };
 
 /*

@@ -4,21 +4,17 @@ import { QueryParamKey } from './core.constant';
 // "http://localhost:4200"  see: window.location.origin
 export const CURRENT_WINDOW_URL = window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port : '');
 
-
 const API_ENDPOINT = environment.apiUrl;
-const API_LOGIN=environment.loginApi;
+
 // API Endpoints
 export class ApiEndpoints {
 
     static readonly API_URL = API_ENDPOINT;
 
     static readonly AUTH = {
-        // CUSTOM_USER_REGISTRATION: API_ENDPOINT + '/auth/register',
-        CUSTOM_USER_REGISTRATION: API_ENDPOINT,
-        // CUSTOM_USER_LOGIN: API_ENDPOINT + '/auth/login',
-        CUSTOM_USER_LOGIN: API_LOGIN,
+        CUSTOM_USER_REGISTRATION: API_ENDPOINT + "/users/register",
+        CUSTOM_USER_LOGIN: API_ENDPOINT + "/users",
         LOGOUT: API_ENDPOINT + '/logout',
-
     };
 
     static readonly SEARCH = {
