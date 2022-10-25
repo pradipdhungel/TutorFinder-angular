@@ -107,7 +107,11 @@ export class LoginPageComponent implements OnInit {
           this.loading = false;
           this.hasError = true;
           console.log(err);
-          this.loginResponseMessage = err?.error?.response || 'Sorry! Something went wrong !!!';
+          if(err?.status == 401){
+            this.loginResponseMessage = err?.error?.response || 'Invalid username or password, please try again !!!';
+          } else{
+            this.loginResponseMessage = err?.error?.response || 'Sorry! Something went wrong !!!';
+          }
         }
       );
   }

@@ -55,6 +55,8 @@ export class AuthenticationService {
     const generateCredentialsObservable: Observable<Credentials> = authResponseObservable.pipe(
       map((authResponse: AuthResponse) => {
         const tokenPayload: JwtTokenPayload = this.parseJwt(authResponse.token);
+        console.log("tokenPayload ===>> " , tokenPayload);
+        
         const credentialsData: Credentials = {
           username: tokenPayload.username,
           token: authResponse.token,

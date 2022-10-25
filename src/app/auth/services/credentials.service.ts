@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { JwtTokenPayload } from '../auth.model';
 
 export interface Credentials {
-  username: string;
+  username?: string;
   token: string;
   jwtTokenPayload?: JwtTokenPayload
 }
