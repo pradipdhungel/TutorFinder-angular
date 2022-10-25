@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder,ReactiveFormsModule, FormGroup, Validators } from '@angular/forms';
 import { TutorRequirementContext } from '@app/auth/auth.model';
 import { AuthenticationService } from '@app/auth/services/authentication.service';
 import { appBrandName } from '@app/core/core.constant';
