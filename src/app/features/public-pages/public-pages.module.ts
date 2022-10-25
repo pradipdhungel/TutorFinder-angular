@@ -10,6 +10,7 @@ import { JobSearchComponent } from './components/job-search/job-search.component
 import { FooterComponent } from './components/footer/footer.component';
 import { TutorRequirementsComponent } from './jobs/jobs.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TutorRequirementComponent } from './Tutor-Requirement-Page/tutor-requirement/tutor-requirement.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
     JobSearchComponent,
     FooterComponent,
     TutorRequirementsComponent,
+    TutorRequirementComponent,
   ],
   imports: [
     CommonModule,

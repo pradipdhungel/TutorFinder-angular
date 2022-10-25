@@ -38,18 +38,6 @@ export class AuthenticationService {
     return processedUserDTOObservable;
   }
 
-  // public registerUser(registerContext: RegisterContext, redirectToLoginUri?: boolean): Observable<studentDTO> {
-  //   const userDTOObservable: Observable<studentDTO> = this.http.post<studentDTO>(this.AUTH_URL.CUSTOM_USER_REGISTRATION, registerContext);
-  //   const processedUserDTOObservable: Observable<studentDTO> = userDTOObservable.pipe(
-  //     map((studentDTO: studentDTO) => {
-  //       if (redirectToLoginUri) {
-  //         this.router.navigate([APP_ROUTES.LOGIN], { queryParams: { [QueryParamUIKey.REGISTRATION_SUCCESSFUL]: "Registration Successful, Please check your email for verification." }, replaceUrl: true });
-  //       }
-  //       return studentDTO;
-  //     })
-  //   );
-  //   return processedUserDTOObservable;
-  // }
   public login(loginContext: LoginContext, redirectAfterLogin: boolean = false, defaultRedirectUri: string | null = '/'): Observable<Credentials> {
     const authResponseObservable: Observable<AuthResponse> = this.http.post<AuthResponse>(this.AUTH_URL.CUSTOM_USER_LOGIN, loginContext);
     const generateCredentialsObservable: Observable<Credentials> = authResponseObservable.pipe(

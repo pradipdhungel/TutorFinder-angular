@@ -4,6 +4,7 @@ import { PublicPagesWrapperComponent } from './public-pages-wrapper.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
 import { TutorRequirementsComponent } from './jobs/jobs.component';
+import { TutorRequirementComponent } from './Tutor-Requirement-Page/tutor-requirement/tutor-requirement.component';
 
 
 const routes: Routes = [
@@ -34,6 +35,13 @@ const routes: Routes = [
           title: 'Tutor Requirements'
         }
       },
+      {
+        path: 'tutor-requirement',
+        component: TutorRequirementComponent,
+        data: {
+          title: 'Tutor Requirement'
+        }
+      }
 
     ]
 

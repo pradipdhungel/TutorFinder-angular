@@ -12,7 +12,10 @@ export interface RegisterContext {
     shortInfo: string;
     expertise: string;    
 }
-
+export interface TutorRequirementContext {
+    title: string;    
+    description: string;   
+}
 export interface LoginContext {
     username: string;
     password: string;
