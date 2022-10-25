@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   appBrandName: 'Tutor Finder',
-  apiUrl: 'http://localhost:8080'
+  apiUrl: 'http://localhost'
 };
 
 /*

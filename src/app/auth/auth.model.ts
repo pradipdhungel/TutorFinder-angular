@@ -30,6 +30,7 @@ export interface JwtTokenPayload {
     sub: string;
     username: string;
     user: UserDTO
+    roles: string;
     authorities?: object;
     attributes?: object;
     iat: string;

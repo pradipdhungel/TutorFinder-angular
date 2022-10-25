@@ -10,18 +10,20 @@
 </div>
 
 
-<div class="container mt-5">
+<!-- <div class="container mt-5"> -->
 
-    <div class="row">
-                info
-        <div class="col-md-4" *ngFor="let job of jobs">
-            <div class="card card-body">
-                <h5 class="card-title">{{job.title}}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">{{job.jobId}}</h6>
-                <p class="card-text">{{job.description}}</p>
-                <a href="#" class="card-link">View</a>
+    <div class="m-5">
+        <div class="col" *ngFor="let requirement of requirements">
+            <div class="card card-body m-3">
+                <!-- <h5 class="card-header">{{requirement.title}}</h5> -->
+                <h5 class="card-title">{{requirement.title}}</h5>
+                <!-- <h6 class="card-subtitle mb-2 text-muted">{{requirement.id}}</h6> -->
+                <p class="card-text">{{requirement.description}}</p>
+                <p class="card-text">Posted Date: {{requirement.postedDate}}</p>
+                <div class="d-grid gap-2 d-md-block">
+                <a href="#" class="btn btn-primary rounded-pill">Send Request to Student</a>
+                </div>
             </div>
         </div>
-
     </div>
-</div>
+<!-- </div> -->

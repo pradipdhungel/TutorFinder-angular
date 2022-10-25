@@ -1,7 +1,7 @@
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-cover-wrapper shadow-sm" id="mainNav">
     <div class="container px-5">
-        <a class="navbar-brand fw-bold fs-4" href="/">{{appBrandName}}</a>
+        <a class="navbar-brand fw-bold fs-4" style="color: #209CEE;" href="/">{{appBrandName}}</a>
         <button class="navbar-toggler" (click)="toggleNavbarClass()" type="button" data-bs-toggle="collapse"
             data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
             aria-label="Toggle navigation">
@@ -11,11 +11,12 @@
             <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
                 <li class="nav-item"><a [routerLink]="'/'" [routerLinkActive]="'active'"
                         class="nav-link me-lg-3">Home</a></li>
-                <li class="nav-item"><a [routerLink]="'/tutor-requirements'" [routerLinkActive]="'active'"
-                        class="nav-link me-lg-3">Tutors</a></li>
-                        
-                <li class="nav-item"><a [routerLink]="'/tutor-requirement'" [routerLinkActive]="'active'"
-                        class="nav-link me-lg-3">Tutor Requirement</a></li>
+                <li *ngIf="isStudent" class="nav-item"><a [routerLink]="'/tutor-requirement'"
+                        [routerLinkActive]="'active'" class="nav-link me-lg-3">Tutor Requirement</a></li>
+                <li *ngIf="isStudent" class="nav-item"><a [routerLink]="'/requests'"
+                        [routerLinkActive]="'active'" class="nav-link me-lg-3">Requests</a></li>
+                <li *ngIf="!isStudent" class="nav-item"><a [routerLink]="'/tutor-requirements'"
+                        [routerLinkActive]="'active'" class="nav-link me-lg-3">Reservations</a></li>
                 <li class="nav-item"><a [routerLink]="'/contact'" [routerLinkActive]="'active'"
                         class="nav-link me-lg-3">Contact</a></li>
 
@@ -34,8 +35,6 @@
                     <!-- Temporary fix for css "dropdown-menu-end" not working in ngBootstrap [ngStyle]="{'right': '0'}"  -->
                     <ul *dropdownMenu class="dropdown-menu text-small shadow dropdown-menu-end"
                         [ngStyle]="{'right': '0'}" aria-labelledby="dropdownUser2">
-<<<<<<< HEAD
-=======
                         <li><a class="dropdown-item">
                                 <span class="link-secondary text-muted pe-1">
                                     <strong *ngIf="firstName">{{firstName}}</strong>
@@ -45,8 +44,8 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
->>>>>>> cc7a8dc744b9b5bfa2ade340e581709ba87b7b19
                         <li><a class="dropdown-item" [routerLink]="'/dashboard'">Dashboard</a></li>
+                        <!-- <li><a class="dropdown-item" [routerLink]="'/dashboard'">Dashboard</a></li> -->
                         <li><a class="dropdown-item" [routerLink]="'/dashboard/settings'">Settings</a></li>
                         <li><a class="dropdown-item" [routerLink]="'/dashboard/profile'">Profile</a></li>
                         <li>
@@ -57,8 +56,6 @@
                 </div>
 
             </ng-container>
-
-
             <ng-template #defaultLoginSection>
                 <div>
                     <a class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" role="button" [routerLink]="'/login'"

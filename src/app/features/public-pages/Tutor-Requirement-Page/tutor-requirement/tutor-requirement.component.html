@@ -20,23 +20,20 @@
                               placeholder="title" formControlName="title"
                               [ngClass]="{ 'is-invalid': isSubmitted && formControls.title.errors }" required />
                           <label for="floatingInputTitle"><span class="text-danger">*</span> Title</label>
-                      </div>                     
-                      
+                      </div>                                        
                       <!-- for Student use Description -->
                       <div class="form-floating mb-3" *ngIf="role === 'ROLE_STUDENT'">
                           <textarea type="description" class="form-control" id="floatingDescription"
-                              placeholder="Description" formControlName="description"></textarea>
+                              placeholder="Description" formControlName="description" style="height: 150px;"></textarea>
                           <label for="floatingDescription"><span class="text-danger"></span> Description</label>
                       </div>                 
                       <br/>
-                      <br/>
-                      <br/>
-                      <br/> 
+                      <br/>                      
                       <div class="d-grid mb-2">
                           <button class="btn btn btn-primary fw-bold text-uppercase" type="submit" >
-                              Apply  
+                              Create  
                               <app-loading *ngIf="loading" [repeat]="3"></app-loading>                            
-                          </button>
+                          </button>                          
                       </div>
                   </form>                                
                   <hr class="my-4">
@@ -45,7 +42,6 @@
       </div>
   </div>
 </div>
-
 <div class="text-center text-muted mb-3">
   Copyright &copy; 2022 &mdash;
   <a class="link" [routerLink]="'/'">{{appBrandName}}</a>

@@ -1,11 +1,11 @@
 <div class="container">
 
     <div class="mt-2">
-        <a class="navbar-brand fw-bold fs-4" [routerLink]="'/'">{{appBrandName}}</a>
+        <a class="navbar-brand fw-bold fs-4" style="color: #209CEE;" [routerLink]="'/'">{{appBrandName}}</a>
     </div>
 
     <div class="row">
-        <div class="col-lg-10 col-xl-9 mx-auto">
+        <div class="col-lg-10 col-xl-12 mx-auto">
             <div class="card flex-row my-3 border-0 shadow rounded-3 overflow-hidden">
                 <div class="card-img-left d-none d-md-flex w-50">
                     <img class="img-fluid rounded-3 my-5"
@@ -13,17 +13,18 @@
                         alt="..." />
                 </div>
                 <div class="card-body p-4 p-sm-5">
-                    <h5 class="card-title text-center mb-3 fw-light fs-5">Register</h5>
+                    <h5 class="card-title text-center mb-3 fw-light fs-5">Sign Up</h5>
 
                     <div *ngIf="responseMessage && responseMessage.length > 0" class="alert"
                         [ngClass]="hasError? 'alert-danger': 'alert-primary' " role="alert">
                         {{responseMessage}}
                     </div>
-                    Choose: Role
+                    
                     <form [formGroup]="registrationForm" (ngSubmit)="onRegisterSubmit()">
-                        <div class="form-floating mb-3">
-                            <select name="role" id="role" (change)="onChange($event.target)">
-                                <option value="ROLE_STUDENT" selected >Student</option>
+                        <div class="form-floating mb-3 ">
+                            <div class="mb-2"><label for="role"><span class="text-danger">*</span> Choose User Type</label></div>
+                            <select class="form-select" name="role" id="role" (change)="onChange($event.target)" required>
+                                <option value="ROLE_STUDENT" selected>Student</option>
                                 <option value="ROLE_TUTOR" >Tutor</option>
                             </select>
                         </div>
@@ -49,14 +50,14 @@
                         <div class="form-floating mb-3">
                             <input type="address" class="form-control" id="floatingAddress" placeholder="Address"
                                 formControlName="address" />
-                            <label for="floatingAddress"><span class="text-danger"></span> Address</label>
+                            <label for="floatingAddress"><span class="text-danger">*</span> Address</label>
                         </div>
 
                         <!-- for Student use Description -->
                         <div class="form-floating mb-3" *ngIf="role === 'ROLE_STUDENT'">
                             <input type="description" class="form-control" id="floatingDescription"
                                 placeholder="Description" formControlName="description"/>
-                            <label for="floatingDescription"><span class="text-danger"></span> Description</label>
+                            <label for="floatingDescription"><span class="text-danger">*</span> Description</label>
                         </div>
 
                         <!-- for Tutor use Expertise Short info-->
