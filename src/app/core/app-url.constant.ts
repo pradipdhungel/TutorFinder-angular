@@ -30,6 +30,10 @@ export class ApiEndpoints {
         GET_ALL_RESERVATIN_TUTOR: API_ENDPOINT + ':8085/reservation/all-by-tutor'
     }
 
+    static readonly REQUIREMENT = {
+        VIEW_REQUIREMENT: API_ENDPOINT + ":8083/tutor-requirements/students"
+    }
+
     // static readonly USERS = {
     //     MAIN: API_ENDPOINT + '/users',
     //     ME: API_ENDPOINT + '/users/me'

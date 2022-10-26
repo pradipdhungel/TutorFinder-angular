@@ -12,7 +12,9 @@
                 <li class="nav-item"><a [routerLink]="'/'" [routerLinkActive]="'active'"
                         class="nav-link me-lg-3">Home</a></li>
                 <li *ngIf="isStudent" class="nav-item"><a [routerLink]="'/create-tutor-requirement'"
-                        [routerLinkActive]="'active'" class="nav-link me-lg-3">Tutor Requirement</a></li>
+                        [routerLinkActive]="'active'" class="nav-link me-lg-3">Create Requirement</a></li>
+                <li *ngIf="isStudent" class="nav-item"><a [routerLink]="'/view-requirements'"
+                        [routerLinkActive]="'active'" class="nav-link me-lg-3">View Requirements</a></li>
                 <li *ngIf="isStudent" class="nav-item"><a [routerLink]="'/reservation-request'"
                         [routerLinkActive]="'active'" class="nav-link me-lg-3">Requests</a></li>
                 <li *ngIf="!isStudent" class="nav-item"><a [routerLink]="'/tutor-reservations'"

@@ -14,6 +14,7 @@ import { ReservationRequestComponent } from './reservation-request/reservation-r
 import { TutorReservationsComponent } from './reservations/tutor-reservations..component';
 import { TutorRequirementSearchComponent } from './jobs/jobs.component';
 import { CreateTutorRequirementComponent } from './create-tutor-requirement/tutor-requirement.component';
+import { ViewRequirementsComponent } from './components/view-requirements/view-requirements.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { CreateTutorRequirementComponent } from './create-tutor-requirement/tuto
     CreateTutorRequirementComponent,
     TutorRequirementSearchComponent,
     ReservationRequestComponent,
-    TutorReservationsComponent
+    TutorReservationsComponent,
+    ViewRequirementsComponent
   ],
   imports: [
     CommonModule,
