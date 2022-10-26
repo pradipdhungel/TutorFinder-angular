@@ -3,8 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PublicPagesWrapperComponent } from './public-pages-wrapper.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
-import { TutorRequirementsComponent } from './jobs/jobs.component';
-import { TutorRequirementComponent } from './Tutor-Requirement-Page/tutor-requirement/tutor-requirement.component';
+import { CreateTutorRequirementComponent } from './create-tutor-requirement/tutor-requirement.component';
 import { ReservationRequestComponent } from './reservation-request/reservation-request.component';
 import { TutorReservationsComponent } from './reservations/tutor-reservations..component';
 import { TutorRequirementSearchComponent } from './jobs/jobs.component';
@@ -39,12 +38,12 @@ const routes: Routes = [
         }
       },
       {
-        path: 'tutor-requirement',
-        component: TutorRequirementComponent,
+        path: 'create-tutor-requirement',
+        component: CreateTutorRequirementComponent,
         data: {
           title: 'Tutor Requirement'
         }
-      }
+      },
 
       {
         path: 'reservation-request',
