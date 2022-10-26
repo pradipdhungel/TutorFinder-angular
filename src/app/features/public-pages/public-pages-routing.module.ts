@@ -7,6 +7,7 @@ import { CreateTutorRequirementComponent } from './create-tutor-requirement/tuto
 import { ReservationRequestComponent } from './reservation-request/reservation-request.component';
 import { TutorReservationsComponent } from './reservations/tutor-reservations..component';
 import { TutorRequirementSearchComponent } from './jobs/jobs.component';
+import { ViewRequirementsComponent } from './components/view-requirements/view-requirements.component';
 
 
 const routes: Routes = [
@@ -60,10 +61,16 @@ const routes: Routes = [
           title: 'Reservations'
         }
       },
+
+      {
+        path: 'view-requirements',
+        component: ViewRequirementsComponent,
+        data: {
+          title: 'View Requirements'
+        }
+      }
     ]
-
   },
-
 ];
 
 @NgModule({

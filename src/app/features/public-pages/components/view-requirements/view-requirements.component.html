@@ -1,0 +1,9 @@
+<div class="m-2">
+    <div class="col" *ngFor="let require of requirements">
+        <div class="card card-body m-3">
+            <h5 class="card-title">{{require.title}}</h5>
+            <p class="card-text">{{require.description}}</p>
+            <h6 class="card-text">Posted Date: {{require.postedDate}}</h6>
+        </div>
+    </div>
+</div>
