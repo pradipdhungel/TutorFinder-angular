@@ -24,16 +24,6 @@ export class CreateTutorRequirementComponent implements OnInit {
   responseMessage: string = '';
   requirements: RequirementDTO[] = [];
 
-//newly added
-  // isNameSelected!:boolean;
-  // selectInput(event:any) {
-  //   let selected = event.target.value;
-  //   if (selected == "ROLE_STUDENT") {
-  //     this.isNameSelected = true;
-  //   } else {
-  //     this.isNameSelected = false;
-  //   }
-  // }
   // Form state
   tutorRequirementForm!: FormGroup;
   isTermsChecked: boolean = false;
@@ -81,7 +71,7 @@ export class CreateTutorRequirementComponent implements OnInit {
     this.loading = true;   
     // this.responseMessage='you have Successfuly created a tutor requirement, Please check your email for further verification!';
     this.router.navigate(['/']).then(() => {
-      this.responseMessage='you have Successfuly created a tutor requirement, Please check your email for further verification!';
+      this.responseMessage='you have Successfuly created a tutor requirement!';
       this.toastrService.success(this.responseMessage);
     });
   }
