@@ -8,8 +8,10 @@ import { PublicPagesRoutingModule } from './public-pages-routing.module';
 import { FormsModule } from '@angular/forms';
 import { JobSearchComponent } from './components/job-search/job-search.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { TutorRequirementsComponent } from './jobs/jobs.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { ReservationRequestComponent } from './reservation-request/reservation-request.component';
+import { TutorReservationsComponent } from './reservations/tutor-reservations..component';
+import { TutorRequirementSearchComponent } from './jobs/jobs.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
     HomeNavbarComponent,
     JobSearchComponent,
     FooterComponent,
-    TutorRequirementsComponent,
+    TutorRequirementSearchComponent,
+    ReservationRequestComponent,
+    TutorReservationsComponent
   ],
   imports: [
     CommonModule,
