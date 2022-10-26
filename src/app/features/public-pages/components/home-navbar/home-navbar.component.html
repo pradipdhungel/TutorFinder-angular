@@ -13,12 +13,13 @@
                         class="nav-link me-lg-3">Home</a></li>
                 <li *ngIf="isStudent" class="nav-item"><a [routerLink]="'/tutor-requirement'"
                         [routerLinkActive]="'active'" class="nav-link me-lg-3">Tutor Requirement</a></li>
-                <li *ngIf="isStudent" class="nav-item"><a [routerLink]="'/requests'"
+                <li *ngIf="isStudent" class="nav-item"><a [routerLink]="'/reservation-request'"
                         [routerLinkActive]="'active'" class="nav-link me-lg-3">Requests</a></li>
-                <li *ngIf="!isStudent" class="nav-item"><a [routerLink]="'/tutor-requirements'"
+                <li *ngIf="!isStudent" class="nav-item"><a [routerLink]="'/tutor-reservations'"
                         [routerLinkActive]="'active'" class="nav-link me-lg-3">Reservations</a></li>
-                <li class="nav-item"><a [routerLink]="'/contact'" [routerLinkActive]="'active'"
-                        class="nav-link me-lg-3">Contact</a></li>
+
+                <!-- <li class="nav-item"><a [routerLink]="'/contact'" [routerLinkActive]="'active'"
+                        class="nav-link me-lg-3">Contact</a></li> -->
 
             </ul>
 

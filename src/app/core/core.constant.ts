@@ -14,6 +14,9 @@ export const APP_ROUTES = {
   TUTOR_REQUIREMENT: '/tutor-requirement',
 
   DASHBOARD: '/dashboard',
+  REQUESTS: '/reservation-request',
+  RESERVATIONS: '/tutor-reservations',
+  TUTOR_REQUIREMENT_SEARCH: '/tutor-requirements-search'
 };
 
 export class QueryParamKey {

@@ -1,7 +1,7 @@
 export interface tutoRequirementDTO {
-    id: string;
-    title: string;
-    description: string;
+    tutorRequirementId: string;
+    tutorRequirementTitle: string;
+    tutorRequirementDesc: string;
     studentUserId: number;
     postedDate: string;
 }
