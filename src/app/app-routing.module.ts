@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { SignupPageComponent } from './auth/signup-page/signup-page.component';
 import { LoginPageComponent } from './auth/login-page/login-page.component';
-import { TutorReservationsComponent } from './features/public-pages/reservations/tutor-reservations..component';
+import { TutorReservationsComponent } from './features/public-pages/reservations/tutor-reservations.component';
 
 
 const routes: Routes = [

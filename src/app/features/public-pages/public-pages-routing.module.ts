@@ -5,7 +5,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
 import { CreateTutorRequirementComponent } from './create-tutor-requirement/tutor-requirement.component';
 import { ReservationRequestComponent } from './reservation-request/reservation-request.component';
-import { TutorReservationsComponent } from './reservations/tutor-reservations..component';
+import { TutorReservationsComponent } from './reservations/tutor-reservations.component';
 import { TutorRequirementSearchComponent } from './jobs/jobs.component';
 import { ViewRequirementsComponent } from './components/view-requirements/view-requirements.component';
 
