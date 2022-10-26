@@ -1,0 +1,14 @@
+<div class="m-2">
+    <div class="col" *ngFor="let reserve of reservations">
+        <div class="card card-body m-3">
+            <h5 class="card-title">{{reserve.tutorRequirementTitle}}</h5>
+            <p class="card-text">{{reserve.tutorRequirementDesc}}</p>
+            <div class="d-grid gap-2 d-md-block">
+                <button *ngIf="!reserve.reservationStatus" disabled class="btn btn-primary rounded-pill">Waiting for
+                    Approval</button>
+                <button *ngIf="reserve.reservationStatus" disabled
+                    class="btn  btn-success rounded-pill">Approved</button>
+            </div>
+        </div>
+    </div>
+</div>

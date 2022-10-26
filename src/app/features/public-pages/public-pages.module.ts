@@ -8,10 +8,13 @@ import { PublicPagesRoutingModule } from './public-pages-routing.module';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { JobSearchComponent } from './components/job-search/job-search.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { TutorRequirementsComponent } from './jobs/jobs.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
-import { TutorRequirementComponent } from './Tutor-Requirement-Page/tutor-requirement/tutor-requirement.component';
 import { SharedModule } from '@app/shared/shared.module';
+import { ReservationRequestComponent } from './reservation-request/reservation-request.component';
+import { TutorReservationsComponent } from './reservations/tutor-reservations..component';
+import { TutorRequirementSearchComponent } from './jobs/jobs.component';
+import { CreateTutorRequirementComponent } from './create-tutor-requirement/tutor-requirement.component';
+
 
 @NgModule({
   declarations: [
@@ -21,9 +24,10 @@ import { SharedModule } from '@app/shared/shared.module';
     HomeNavbarComponent,
     JobSearchComponent,
     FooterComponent,
-    TutorRequirementsComponent,
-    TutorRequirementComponent,
-    
+    CreateTutorRequirementComponent,
+    TutorRequirementSearchComponent,
+    ReservationRequestComponent,
+    TutorReservationsComponent
   ],
   imports: [
     CommonModule,

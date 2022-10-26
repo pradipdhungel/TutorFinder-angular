@@ -1,18 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReservationRequestComponent } from './reservation-request.component';
 
-import { TutorRequirementSearchComponent } from './jobs.component';
+
 
 describe('JobsComponent', () => {
-  let component: TutorRequirementSearchComponent;
-  let fixture: ComponentFixture<TutorRequirementSearchComponent>;
+  let component: ReservationRequestComponent;
+  let fixture: ComponentFixture<ReservationRequestComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TutorRequirementSearchComponent ]
+      declarations: [ ReservationRequestComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TutorRequirementSearchComponent);
+    fixture = TestBed.createComponent(ReservationRequestComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
