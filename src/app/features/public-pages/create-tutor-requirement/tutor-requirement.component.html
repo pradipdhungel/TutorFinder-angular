@@ -1,6 +1,5 @@
-<div class="container">
   <div class="row">
-      <div class="col-lg-10 col-xl-9 mx-auto">
+      <div class="col-lg-10 col-xl-14 mx-auto">
           <div class="card flex-row my-3 border-0 shadow rounded-3 overflow-hidden">
               <div class="card-img-left d-none d-md-flex w-50">
                   <img class="img-fluid rounded-3 my-5"                      
@@ -25,7 +24,7 @@
                       <div class="form-floating mb-3" *ngIf="role === 'ROLE_STUDENT'">
                           <textarea type="description" class="form-control" id="floatingDescription"
                               placeholder="Description" formControlName="description" style="height: 150px;"></textarea>
-                          <label for="floatingDescription"><span class="text-danger"></span> Description</label>
+                          <label for="floatingDescription"><span class="text-danger">*</span> Description</label>
                       </div>                 
                       <br/>
                       <br/>                      
@@ -41,8 +40,3 @@
           </div>
       </div>
   </div>
-</div>
-<div class="text-center text-muted mb-3">
-  Copyright &copy; 2022 &mdash;
-  <a class="link" [routerLink]="'/'">{{appBrandName}}</a>
-</div>

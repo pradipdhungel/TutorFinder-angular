@@ -13,7 +13,7 @@ import { TutorRequirementServiceService } from '@app/core/services/tutor-require
   templateUrl: './tutor-requirement.component.html',
   styleUrls: ['./tutor-requirement.component.scss']
 })
-export class TutorRequirementComponent implements OnInit {
+export class CreateTutorRequirementComponent implements OnInit {
 
   readonly appBrandName = appBrandName;
 
