@@ -36,6 +36,13 @@ const routes: Routes = [
         }
       },
       {
+        path: 'requests',
+        component: TutorRequirementsComponent,
+        data: {
+          title: 'Tutor Requirements'
+        }
+      },
+      {
         path: 'tutor-requirement',
         component: TutorRequirementComponent,
         data: {

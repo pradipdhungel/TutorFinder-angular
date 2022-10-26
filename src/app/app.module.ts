@@ -10,6 +10,8 @@ import { SharedModule } from './shared/shared.module';
 import { FeaturesModule } from './features/features.module';
 import { AppRoutingModule } from './app-routing.module';
 import { StudentServiceService } from './core/services/student-service.service';
+import { ToastrModule } from 'ngx-toastr';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { StudentServiceService } from './core/services/student-service.service';
     AuthModule,
     CoreModule,
     SharedModule,
-    FeaturesModule
+    FeaturesModule,
+    ToastrModule.forRoot()
   ],
   providers: [StudentServiceService],
   bootstrap: [AppComponent]

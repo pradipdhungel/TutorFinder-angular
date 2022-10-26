@@ -7,6 +7,8 @@ import { appBrandName } from '@app/core/core.constant';
 import { RequirementDTO } from '@app/core/core.model';
 
 import { TutorRequirementServiceService } from '@app/core/services/tutor-requirement-service.service';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-tutor-requirement',
@@ -38,7 +40,7 @@ export class TutorRequirementComponent implements OnInit {
   isSubmitted = false;
   role = "ROLE_STUDENT";
 
-  constructor(private formBuilder: FormBuilder,private router: Router,private tutorRequirementService:TutorRequirementServiceService,
+  constructor(private toastrService: ToastrService, private formBuilder: FormBuilder,private router: Router,private tutorRequirementService:TutorRequirementServiceService,
     private authenticationService: AuthenticationService) {
   }
 
@@ -80,6 +82,7 @@ export class TutorRequirementComponent implements OnInit {
     // this.responseMessage='you have Successfuly created a tutor requirement, Please check your email for further verification!';
     this.router.navigate(['/']).then(() => {
       this.responseMessage='you have Successfuly created a tutor requirement, Please check your email for further verification!';
+      this.toastrService.success(this.responseMessage);
     });
   }
 }
