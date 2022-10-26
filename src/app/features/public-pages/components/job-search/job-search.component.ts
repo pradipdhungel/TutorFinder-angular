@@ -28,14 +28,15 @@ export class JobSearchComponent implements OnInit {
     console.log("jobsBrowseQueryParams", requirementBrowseQueryParams)
 
     if(requirementBrowseQueryParams?.q==null){
-      this.toastrService.success('You did not insert any search query text!')
-    }    
-    const result=this.router.navigate([APP_ROUTES.TUTOR_REQUIREMENT_SEARCH],
+      this.toastrService.error('You did not insert any search query text!')
+    }  
+      
+    this.router.navigate([APP_ROUTES.TUTOR_REQUIREMENT_SEARCH],
       { queryParams: requirementBrowseQueryParams, queryParamsHandling: 'merge' }
     );
-    if(requirementBrowseQueryParams!=null){
-      this.toastrService.success('no data!')
-    }  
+    // .catch((requirementBrowseQueryParams) => {
+    //   this.toastrService.warning('data!',requirementBrowseQueryParams)
+    // })
   }
 
 }
