@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+      <div class="col-lg-10 col-xl-9 mx-auto">
+          <div class="card flex-row my-3 border-0 shadow rounded-3 overflow-hidden">
+              <div class="card-img-left d-none d-md-flex w-50">
+                  <img class="img-fluid rounded-3 my-5"                      
+                  src="https://images.pexels.com/photos/8553916/pexels-photo-8553916.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                      alt="..." />
+              </div>
+              <div class="card-body p-4 p-sm-5">
+                  <h5 class="card-title text-center mb-3 fw-light fs-5">Tutor Requirement </h5>
+
+                  <div *ngIf="responseMessage && responseMessage.length > 0" class="alert"
+                      [ngClass]="hasError? 'alert-danger': 'alert-primary' " role="alert">
+                      {{responseMessage}}
+                  </div>                  
+                  <form [formGroup]="tutorRequirementForm" (ngSubmit)="onSubmit()">                      
+                      <div class="form-floating mb-3">
+                          <input type="title" class="form-control" id="title"
+                              placeholder="title" formControlName="title"
+                              [ngClass]="{ 'is-invalid': isSubmitted && formControls.title.errors }" required />
+                          <label for="floatingInputTitle"><span class="text-danger">*</span> Title</label>
+                      </div>                                        
+                      <!-- for Student use Description -->
+                      <div class="form-floating mb-3" *ngIf="role === 'ROLE_STUDENT'">
+                          <textarea type="description" class="form-control" id="floatingDescription"
+                              placeholder="Description" formControlName="description" style="height: 150px;"></textarea>
+                          <label for="floatingDescription"><span class="text-danger"></span> Description</label>
+                      </div>                 
+                      <br/>
+                      <br/>                      
+                      <div class="d-grid mb-2">
+                          <button class="btn btn btn-primary fw-bold text-uppercase" type="submit" >
+                              Create  
+                              <app-loading *ngIf="loading" [repeat]="3"></app-loading>                            
+                          </button>                          
+                      </div>
+                  </form>                                
+                  <hr class="my-4">
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="text-center text-muted mb-3">
+  Copyright &copy; 2022 &mdash;
+  <a class="link" [routerLink]="'/'">{{appBrandName}}</a>
+</div>

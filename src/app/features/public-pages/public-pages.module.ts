@@ -5,10 +5,12 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
 import { HomeNavbarComponent } from './components/home-navbar/home-navbar.component';
 import { PublicPagesRoutingModule } from './public-pages-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { JobSearchComponent } from './components/job-search/job-search.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TutorRequirementComponent } from './Tutor-Requirement-Page/tutor-requirement/tutor-requirement.component';
+import { SharedModule } from '@app/shared/shared.module';
 import { ReservationRequestComponent } from './reservation-request/reservation-request.component';
 import { TutorReservationsComponent } from './reservations/tutor-reservations..component';
 import { TutorRequirementSearchComponent } from './jobs/jobs.component';
@@ -22,6 +24,8 @@ import { TutorRequirementSearchComponent } from './jobs/jobs.component';
     HomeNavbarComponent,
     JobSearchComponent,
     FooterComponent,
+    TutorRequirementsComponent,
+    TutorRequirementComponent,
     TutorRequirementSearchComponent,
     ReservationRequestComponent,
     TutorReservationsComponent
@@ -30,6 +34,8 @@ import { TutorRequirementSearchComponent } from './jobs/jobs.component';
     CommonModule,
     PublicPagesRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
+    SharedModule,
     BsDropdownModule.forRoot()
   ]
 })

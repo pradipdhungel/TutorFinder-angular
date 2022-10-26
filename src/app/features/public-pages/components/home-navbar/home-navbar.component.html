@@ -11,14 +11,16 @@
             <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
                 <li class="nav-item"><a [routerLink]="'/'" [routerLinkActive]="'active'"
                         class="nav-link me-lg-3">Home</a></li>
-                <li *ngIf="isStudent" class="nav-item"><a [routerLink]="'/tutor-requirements'"
+                <li *ngIf="isStudent" class="nav-item"><a [routerLink]="'/tutor-requirement'"
                         [routerLinkActive]="'active'" class="nav-link me-lg-3">Tutor Requirement</a></li>
                 <li *ngIf="isStudent" class="nav-item"><a [routerLink]="'/reservation-request'"
                         [routerLinkActive]="'active'" class="nav-link me-lg-3">Requests</a></li>
                 <li *ngIf="!isStudent" class="nav-item"><a [routerLink]="'/tutor-reservations'"
                         [routerLinkActive]="'active'" class="nav-link me-lg-3">Reservations</a></li>
+
                 <!-- <li class="nav-item"><a [routerLink]="'/contact'" [routerLinkActive]="'active'"
                         class="nav-link me-lg-3">Contact</a></li> -->
+
             </ul>
 
 
@@ -43,6 +45,7 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
+                        <li><a class="dropdown-item" [routerLink]="'/dashboard'">Dashboard</a></li>
                         <!-- <li><a class="dropdown-item" [routerLink]="'/dashboard'">Dashboard</a></li> -->
                         <li><a class="dropdown-item" [routerLink]="'/dashboard/settings'">Settings</a></li>
                         <li><a class="dropdown-item" [routerLink]="'/dashboard/profile'">Profile</a></li>
@@ -54,8 +57,6 @@
                 </div>
 
             </ng-container>
-
-
             <ng-template #defaultLoginSection>
                 <div>
                     <a class="btn btn-primary rounded-pill px-3 mb-2 mb-lg-0" role="button" [routerLink]="'/login'"

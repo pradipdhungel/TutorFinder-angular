@@ -15,6 +15,7 @@ export class ApiEndpoints {
         CUSTOM_USER_REGISTRATION: API_ENDPOINT + ":8080/users/register",
         CUSTOM_USER_LOGIN: API_ENDPOINT + ":8080/users",
         LOGOUT: API_ENDPOINT + '/logout',
+        TUTOR_REQUIREMENT:API_ENDPOINT+':8083/tutor-requirements',
     };
 
     static readonly SEARCH = {
