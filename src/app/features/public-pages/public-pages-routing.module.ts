@@ -3,7 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { PublicPagesWrapperComponent } from './public-pages-wrapper.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
-import { TutorRequirementsComponent } from './jobs/jobs.component';
+import { ReservationRequestComponent } from './reservation-request/reservation-request.component';
+import { TutorReservationsComponent } from './reservations/tutor-reservations..component';
+import { TutorRequirementSearchComponent } from './jobs/jobs.component';
 
 
 const routes: Routes = [
@@ -28,13 +30,28 @@ const routes: Routes = [
       },
 
       {
-        path: 'tutor-requirements',
-        component: TutorRequirementsComponent,
+        path: 'tutor-requirements-search',
+        component: TutorRequirementSearchComponent,
         data: {
           title: 'Tutor Requirements'
         }
       },
 
+      {
+        path: 'reservation-request',
+        component: ReservationRequestComponent,
+        data: {
+          title: 'Reservation Request'
+        }
+      },
+
+      {
+        path: 'tutor-reservations',
+        component: TutorReservationsComponent,
+        data: {
+          title: 'Reservations'
+        }
+      },
     ]
 
   },

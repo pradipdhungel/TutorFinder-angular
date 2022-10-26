@@ -1,6 +1,4 @@
-
-
-<form role="form" (ngSubmit)="onSearchSubmit()" novalidate="novalidate">
+<form *ngIf="!isStudent" role="form" (ngSubmit)="onSearchSubmit()" novalidate="novalidate">
     <div class="d-flex">
         <div class="form-floating w-100 mx-3">
             <input type="text" class="form-control" id="floatingSearchText"

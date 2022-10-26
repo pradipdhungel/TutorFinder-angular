@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CredentialsService } from '@app/auth/services/credentials.service';
+import { USER_ROLES } from '@app/core/core.constant';
 
 @Component({
   selector: 'app-home-page',
@@ -7,14 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public credentialService: CredentialsService) { }
+
+    isStudent:boolean = false
 
   ngOnInit(): void {
+    var userRole: string = this.credentialService.getUserRole();
+    this.isStudent = userRole == USER_ROLES.ROLE_STUDENT;
   }
-// searchText!:string;
-
-// onSearchTextEntered(seachValue:string){
-//   console.log(this.searchText);
-//   this.searchText=seachValue;
-// }
 }

@@ -1,5 +1,5 @@
 <div>
-    <h1 class="display-5 fw-bolder mb-2 text-center">A Place to Quicky Find a Tutors You want !!! Matching Students and Tutors across the World</h1>
+    <h1 class="display-5 fw-bolder mb-2 text-center">A Place to Quicky Find a Tutor Requirement  You want !!! Matching Students and Tutors across the World</h1>
     <p class="lead fw-normal-50 mb-4 text-center">In order to assist students develop confidence and realize their full potential, we support tutors who offer high-quality, targeted instruction.
         Tutors offer top-notch instruction in all topics at all levels all around the world.</p>
     <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
@@ -21,7 +21,8 @@
                 <p class="card-text">{{requirement.description}}</p>
                 <p class="card-text">Posted Date: {{requirement.postedDate}}</p>
                 <div class="d-grid gap-2 d-md-block">
-                <a href="#" class="btn btn-primary rounded-pill">Send Request to Student</a>
+                <!-- <a href="#" class="btn btn-primary rounded-pill">Send Request to Student</a> -->
+                <button type="button" (click)="onSendRequestClick(requirement)" class="btn btn-primary rounded-pill">Send Request to Student</button> 
                 </div>
             </div>
         </div>
