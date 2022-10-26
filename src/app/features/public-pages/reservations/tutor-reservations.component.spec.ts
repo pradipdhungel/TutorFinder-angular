@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { TutorReservationsComponent } from './tutor-reservations..component';
+import { TutorReservationsComponent } from './tutor-reservations.component';
 
 
 
