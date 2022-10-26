@@ -11,9 +11,10 @@ import { FooterComponent } from './components/footer/footer.component';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { SharedModule } from '@app/shared/shared.module';
 import { ReservationRequestComponent } from './reservation-request/reservation-request.component';
-import { TutorReservationsComponent } from './reservations/tutor-reservations..component';
+import { TutorReservationsComponent } from './reservations/tutor-reservations.component';
 import { TutorRequirementSearchComponent } from './jobs/jobs.component';
 import { CreateTutorRequirementComponent } from './create-tutor-requirement/tutor-requirement.component';
+import { ViewRequirementsComponent } from './components/view-requirements/view-requirements.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { CreateTutorRequirementComponent } from './create-tutor-requirement/tuto
     CreateTutorRequirementComponent,
     TutorRequirementSearchComponent,
     ReservationRequestComponent,
-    TutorReservationsComponent
+    TutorReservationsComponent,
+    ViewRequirementsComponent
   ],
   imports: [
     CommonModule,
