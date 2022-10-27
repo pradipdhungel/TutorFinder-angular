@@ -7,6 +7,8 @@ import { appBrandName } from '@app/core/core.constant';
 import { RequirementDTO } from '@app/core/core.model';
 
 import { TutorRequirementServiceService } from '@app/core/services/tutor-requirement-service.service';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-tutor-requirement',
@@ -22,23 +24,13 @@ export class CreateTutorRequirementComponent implements OnInit {
   responseMessage: string = '';
   requirements: RequirementDTO[] = [];
 
-//newly added
-  // isNameSelected!:boolean;
-  // selectInput(event:any) {
-  //   let selected = event.target.value;
-  //   if (selected == "ROLE_STUDENT") {
-  //     this.isNameSelected = true;
-  //   } else {
-  //     this.isNameSelected = false;
-  //   }
-  // }
   // Form state
   tutorRequirementForm!: FormGroup;
   isTermsChecked: boolean = false;
   isSubmitted = false;
   role = "ROLE_STUDENT";
 
-  constructor(private formBuilder: FormBuilder,private router: Router,private tutorRequirementService:TutorRequirementServiceService,
+  constructor(private toastrService: ToastrService, private formBuilder: FormBuilder,private router: Router,private tutorRequirementService:TutorRequirementServiceService,
     private authenticationService: AuthenticationService) {
   }
 
@@ -79,7 +71,8 @@ export class CreateTutorRequirementComponent implements OnInit {
     this.loading = true;   
     // this.responseMessage='you have Successfuly created a tutor requirement, Please check your email for further verification!';
     this.router.navigate(['/']).then(() => {
-      this.responseMessage='you have Successfuly created a tutor requirement, Please check your email for further verification!';
+      this.responseMessage='you have Successfuly created a tutor requirement!';
+      this.toastrService.success(this.responseMessage);
     });
   }
 }
