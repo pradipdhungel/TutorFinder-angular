@@ -2,6 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Component, OnInit } from "@angular/core";
 import { ApiEndpoints } from "@app/core/app-url.constant";
 import { RequirementDTO, ReservationDTO } from "@app/core/core.model";
+import { ToastrService } from "ngx-toastr";
 import { map, Observable, Subject } from "rxjs";
 
 @Component({
@@ -15,7 +16,7 @@ export class ReservationRequestComponent implements OnInit {
 
     reservationRequests: ReservationDTO[] = [];
 
-    constructor(private http: HttpClient) {
+    constructor(private http: HttpClient,private toastrService:ToastrService) {
     }
 
     ngOnInit(): void {
@@ -51,5 +52,6 @@ export class ReservationRequestComponent implements OnInit {
                 this.reservationRequests = res
             });
         });
+        this.toastrService.success('you successfuly Approved the reservation');
     }
 }

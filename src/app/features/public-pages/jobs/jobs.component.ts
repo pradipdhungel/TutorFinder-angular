@@ -10,6 +10,7 @@ import { reservationDTO } from '@app/core/model/reservation.model';
 import { SearchServiceService } from '@app/core/services/search-service.service';
 import * as moment from 'moment';
 import { filter, Subject, takeUntil } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-jobs',
@@ -26,6 +27,7 @@ export class TutorRequirementSearchComponent implements OnInit {
   requirements: RequirementDTO[] = [];
 
   constructor(private http: HttpClient,
+    private toastrService: ToastrService,
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
     private searchService: SearchServiceService,
@@ -58,7 +60,7 @@ export class TutorRequirementSearchComponent implements OnInit {
 
   public searchRequest(query: string): void {
     this.searchService.getAllTutorRequirement(query).subscribe(response => {
-      this.requirements = response;
+      this.requirements = response;          
     });
   }
 
@@ -75,6 +77,7 @@ export class TutorRequirementSearchComponent implements OnInit {
 
     this.http.post(ApiEndpoints.RESERVATION.APPROVE_RESERVATION, reservationData).subscribe(data => {
       console.log(data);
+      this.toastrService.success('You have successfuly send request to students!');
     });
   }
 }
