@@ -3,9 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
+  production: true,
   appBrandName: 'Tutor Finder',
-  apiUrl: 'http://localhost'
+  devApiUrl: 'http://localhost',
+  prodApiUrl: {
+    baseUrl: "http://34.173.24.247",
+    authentication: "/authentication",
+    tutorRequirement: "/tutorRequirement",
+    tutorRequirementSearch: "/tutorRequirementSearch",
+    reservation: "/reservation"
+  }
 };
 
 /*
